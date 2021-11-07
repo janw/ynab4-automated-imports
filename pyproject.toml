@@ -1,0 +1,39 @@
+[tool.poetry]
+name = "ynab4-automated-imports"
+version = "0.1.0"
+description = "Automated imports for YNAB4"
+authors = ["Jan Willhaus <mail@janwillhaus.de>"]
+license = "Apache-2.0"
+
+[tool.poetry.dependencies]
+python = "^3.7"
+pydantic = "^1.8.2"
+
+[tool.poetry.dev-dependencies]
+
+# Dev tools
+ipython = "*"
+jupyterlab = "*"
+flake8 = "*"
+flake8-bugbear = "*"
+black = {version="~21.10b0", allow-prereleases=true}
+isort = "*"
+mypy = "*"
+
+[tool.black]
+line-length = 88
+exclude = '''
+/(
+    \.git
+  | \.venv
+  | research
+)/
+'''
+
+[tool.isort]
+profile = "black"
+multi_line_output = 3
+
+[build-system]
+requires = ["poetry>=1.0"]
+build-backend = "poetry.masonry.api"
